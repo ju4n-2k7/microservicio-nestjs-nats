@@ -23,11 +23,11 @@ export class GetCustomerDetailsDTO {
 
   @IsNotEmpty()
   @IsIn(['01', '04', '06', '07', '11', '00'], { each: true })
-  tipoDocumento: string[];
+  documentType: string;
 
   @IsNotEmpty()
   @IsString()
   @MaxLength(15)
   @MinLength(8)
-  numeroDocumento: string;
+  documentNumber: string;
 }

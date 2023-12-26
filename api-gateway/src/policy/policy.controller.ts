@@ -2,11 +2,11 @@ import { Body, Controller, Inject, Post } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { UpdateInsuranceBeneficiariesDTO } from './dtos/UpdateInsuranceBeneficiaries.dto';
 
-@Controller('poliza/beneficiarios/actualizar')
+@Controller('policy')
 export class PolicyController {
   constructor(@Inject('NATS_SERVICE') private natsclient: ClientProxy) {}
 
-  @Post()
+  @Post('beneficiaries/update')
   updateInsuranceBeneficiary(
     @Body() updateInsuranceBeneficiariesDTO: UpdateInsuranceBeneficiariesDTO,
   ) {
